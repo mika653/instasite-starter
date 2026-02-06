@@ -25,7 +25,7 @@ const Contact = () => {
   return (
     <div className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <ModularBadge label="Contact Module" />
-      <h1 className="text-5xl font-bold mb-6">Get in Touch</h1>
+      <h1 className="text-3xl sm:text-5xl font-bold mb-6">Get in Touch</h1>
       <p className="text-xl text-stone-500 mb-16 max-w-2xl">
         Have a question or want to schedule a visit? Fill out the form below and our team will respond promptly.
       </p>

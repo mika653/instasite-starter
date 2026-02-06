@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className="flex justify-between h-20 items-center">
           <Link to="/" className="flex flex-col">
             <span className="serif text-xl font-bold text-stone-900 tracking-tight">InstaSite™ Starter</span>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-stone-400 -mt-1 font-medium">Professional Presence</span>
+            <span className="text-[11px] uppercase tracking-[0.2em] text-stone-400 -mt-1 font-medium">Professional Presence</span>
           </Link>
 
           <div className="hidden md:flex space-x-8 items-center">
@@ -85,7 +85,7 @@ const Footer = () => (
       <h2 className="serif text-xl font-bold mb-2">{DOCTOR_NAME}</h2>
       <p className="text-stone-400 text-sm mb-6">Consultant Physician | Internal Medicine</p>
       <div className="flex justify-center gap-4 mb-6">
-        <span className="text-[10px] font-bold text-stone-400 border border-stone-300 px-2 py-1 rounded">InstaSite™ Starter</span>
+        <span className="text-[11px] font-bold text-stone-400 border border-stone-300 px-2 py-1 rounded">InstaSite™ Starter</span>
       </div>
       <p className="text-xs text-stone-400">© 2024 InstaSite™ Platform. All rights reserved. Powered by InstaSite™</p>
     </div>
