@@ -1,0 +1,118 @@
+
+import React from 'react';
+import { ArrowRight, CheckCircle2, MapPin, Phone, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { DOCTOR_NAME, SERVICES, CLINIC_INFO } from '../constants';
+import { ModularBadge } from '../components/ModularBadge';
+
+const Home = () => {
+  return (
+    <div className="pb-20">
+      {/* HERO SECTION */}
+      <section className="relative bg-stone-50 overflow-hidden py-20 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl">
+            <ModularBadge label="Hero Section Module" />
+            <h1 className="text-5xl lg:text-7xl font-bold text-stone-900 leading-[1.1] mb-6">
+              Trusted medical care, built on <span className="italic serif">compassion</span>.
+            </h1>
+            <p className="text-xl text-stone-500 mb-10 leading-relaxed max-w-xl">
+              {DOCTOR_NAME} provides patient-centric internal medicine in Metro Manila.
+              Professional care you can trust.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/contact"
+                className="bg-salmon-500 text-white px-8 py-4 rounded-full font-medium hover:bg-salmon-600 transition-all text-center flex items-center justify-center gap-2 group"
+              >
+                Contact the Clinic
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                to="/about"
+                className="bg-white text-stone-900 border border-stone-200 px-8 py-4 rounded-full font-medium hover:bg-stone-50 transition-all text-center"
+              >
+                Learn More
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-salmon-100/20 -skew-x-12 transform translate-x-1/2 hidden lg:block" />
+      </section>
+
+      {/* SERVICES LIST */}
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ModularBadge label="Services Module" />
+        <h2 className="text-4xl font-bold mb-12">Medical Services</h2>
+        <div className="space-y-8">
+          {SERVICES.map((service) => (
+            <div key={service.id} className="flex gap-6 items-start p-6 rounded-2xl hover:bg-stone-50 transition-all">
+              <div className="w-10 h-10 bg-salmon-50 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                <CheckCircle2 size={22} className="text-salmon-500" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p className="text-stone-500 leading-relaxed">{service.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CLINIC INFO */}
+      <section className="py-20 bg-stone-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ModularBadge label="Clinic Info Module" />
+          <h2 className="text-4xl font-bold mb-12">Visit Our Clinic</h2>
+          <div className="bg-white rounded-3xl p-10 luxury-shadow border border-stone-100 max-w-2xl">
+            <h3 className="serif text-2xl font-bold mb-8 text-stone-900">{CLINIC_INFO.name}</h3>
+            <div className="space-y-6">
+              <div className="flex gap-4">
+                <div className="bg-salmon-50 p-2 rounded-lg h-fit text-salmon-400">
+                  <MapPin size={20} />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm uppercase tracking-wider text-stone-400 mb-1">Location</h4>
+                  <p className="text-stone-800 font-medium">{CLINIC_INFO.address}</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="bg-salmon-50 p-2 rounded-lg h-fit text-salmon-400">
+                  <Clock size={20} />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm uppercase tracking-wider text-stone-400 mb-1">Hours</h4>
+                  <p className="text-stone-800 font-medium">{CLINIC_INFO.hours}</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="bg-salmon-50 p-2 rounded-lg h-fit text-salmon-400">
+                  <Phone size={20} />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm uppercase tracking-wider text-stone-400 mb-1">Phone</h4>
+                  <p className="text-stone-800 font-medium">{CLINIC_INFO.phone}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-gradient-to-br from-salmon-600 to-salmon-800 text-white text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-8">Ready to book your visit?</h2>
+          <p className="text-salmon-200/70 text-lg mb-10 max-w-xl mx-auto">
+            Get in touch with our clinic today. We're here to help with your healthcare needs.
+          </p>
+          <Link to="/contact" className="bg-white text-salmon-700 px-10 py-5 rounded-full font-bold hover:bg-salmon-50 transition-all inline-block">
+            Contact the Clinic
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Home;
